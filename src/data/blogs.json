@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "title": "Welcome to My Simple Blog",
+    "slug": "welcome-to-my-simple-blog",
+    "content": "This is the first blog post on my new blog platform. I'm excited to share my thoughts, ideas, and experiences with you.\n\nThis blog is built with Next.js and features a clean, minimalist design that focuses on content. I hope you enjoy reading my posts as much as I enjoy writing them.\n\nStay tuned for more content coming soon!",
+    "date": "2024-01-15",
+    "excerpt": "This is the first blog post on my new blog platform. I'm excited to share my thoughts, ideas, and experiences with you."
+  },
+  {
+    "id": "2",
+    "title": "Getting Started with Next.js",
+    "slug": "getting-started-with-nextjs",
+    "content": "Next.js is a powerful React framework that makes it easy to build modern web applications. In this post, I'll share some tips for getting started.\n\n## Key Features\n\n- Server-side rendering\n- Static site generation\n- API routes\n- File-based routing\n\nThese features make Next.js an excellent choice for building blogs, e-commerce sites, and other web applications.\n\n## Getting Started\n\nTo create a new Next.js project, simply run:\n\n```bash\nnpx create-next-app@latest\n```\n\nFollow the prompts, and you'll have a new Next.js project ready to go!",
+    "date": "2024-01-20",
+    "excerpt": "Next.js is a powerful React framework that makes it easy to build modern web applications. In this post, I'll share some tips for getting started."
+  },
+  {
+    "id": "3",
+    "title": "The Art of Minimalist Design",
+    "slug": "the-art-of-minimalist-design",
+    "content": "Minimalist design is about stripping away the unnecessary and focusing on what truly matters. In web design, this means:\n\n- Clean layouts with plenty of white space\n- Thoughtful typography\n- Purposeful use of color\n- Clear navigation\n\nWhen done right, minimalist design creates a calm, focused experience that allows your content to shine. It's not about removing everything—it's about removing everything that doesn't serve a purpose.\n\nRemember: less is more, but only when that 'less' is carefully chosen.",
+    "date": "2024-01-25",
+    "excerpt": "Minimalist design is about stripping away the unnecessary and focusing on what truly matters. In web design, this means clean layouts, thoughtful typography, and purposeful use of color."
+  }
+]
+
