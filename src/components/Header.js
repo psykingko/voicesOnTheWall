@@ -16,7 +16,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-gray-900 hover:text-primary-600 transition-colors">
-            My Simple Blog
+          Voices on The Wall
           </Link>
           <nav className="flex items-center space-x-6">
             <Link 

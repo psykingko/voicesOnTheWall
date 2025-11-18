@@ -19,7 +19,7 @@ export default function Home() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Welcome to My Simple Blog
+            Voices on The Wall
           </h1>
           <p className="text-xl text-gray-600">
             A place where thoughts, ideas, and stories come together
@@ -34,11 +34,11 @@ export default function Home() {
               <p className="text-gray-500">No blog posts yet. Check back soon!</p>
             </div>
           ) : (
-            <div className="space-y-8">
+            <div>
               {blogs.map((blog) => (
                 <article 
                   key={blog.id} 
-                  className="border-b border-gray-200 pb-8 last:border-b-0 last:pb-0"
+                  className="border-l-4 border-l-primary-500 border-t border-r border-b border-gray-200 rounded-lg p-6 mb-8 last:mb-0 hover:shadow-lg transition-shadow"
                 >
                   <div className="mb-2 flex items-center justify-between">
                     <time className="text-sm text-gray-500">

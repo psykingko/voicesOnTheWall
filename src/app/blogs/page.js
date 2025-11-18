@@ -86,7 +86,7 @@ export default function AllBlogs() {
               {currentBlogs.map((blog) => (
                 <article
                   key={blog.id}
-                  className="bg-cream-100 border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
+                  className="border-l-4 border-l-primary-500 border-t border-r border-b border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
                 >
                   <div className="mb-3 flex items-center justify-between">
                     <time className="text-sm text-gray-500">
