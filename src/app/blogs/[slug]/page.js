@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import { combineBlogs, getCommentsBySlug, getCommentCount, isAdminAuthenticated, isBlogEditable } from '@/lib/utils';
+import { combineBlogs, getCommentsBySlug, getCommentCount, isAdminAuthenticated, isBlogEditable, getBlogImage } from '@/lib/utils';
+import Image from 'next/image';
 import initialBlogs from '@/data/blogs.json';
 import CommentForm from '@/components/CommentForm';
 import CommentsList from '@/components/CommentsList';
@@ -167,16 +168,42 @@ export default function BlogPost() {
 
         <article>
           <header className="mb-8">
-            <time className="text-sm text-gray-500">
-              {new Date(blog.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </time>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              {blog.title}
-            </h1>
+            {(() => {
+              const imagePath = getBlogImage(blog.id);
+              return (
+                <>
+                  {imagePath && (
+                    <div className="mb-6">
+                      <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden">
+                        <Image
+                          src={imagePath}
+                          alt={blog.title}
+                          fill
+                          className="object-cover"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
+                        />
+                      </div>
+                    </div>
+                  )}
+                  <div className="flex gap-6 mb-6">
+                    <div className="flex-1">
+                      <time className="text-sm text-gray-700 font-medium">
+                        {new Date(blog.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </time>
+                      <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-6">
+                        {blog.title}
+                      </h1>
+                    </div>
+                  </div>
+                </>
+              );
+            })()}
           </header>
 
           <div className="prose prose-lg max-w-none">

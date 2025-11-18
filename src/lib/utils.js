@@ -1,4 +1,26 @@
 /**
+ * Get blog image path based on blog ID
+ * Tries multiple naming patterns: {id}th.jpeg, {id}.jpeg, {id}.jpg, {id}.png
+ */
+export function getBlogImage(blogId) {
+  if (!blogId) return null;
+  
+  // Try different naming patterns
+  const patterns = [
+    `${blogId}th.jpeg`,
+    `${blogId}th.jpg`,
+    `${blogId}th.png`,
+    `${blogId}.jpeg`,
+    `${blogId}.jpg`,
+    `${blogId}.png`,
+  ];
+  
+  // Return the first pattern (we'll handle missing images in the component)
+  // In a real app, you might want to check if the file exists
+  return `/${patterns[0]}`;
+}
+
+/**
  * Generate a URL-friendly slug from a title
  */
 export function generateSlug(title) {

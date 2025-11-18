@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { combineBlogs, getExcerpt, getCommentCount } from '@/lib/utils';
+import { combineBlogs, getExcerpt, getCommentCount, getBlogImage } from '@/lib/utils';
+import Image from 'next/image';
 import initialBlogs from '@/data/blogs.json';
 
 const POSTS_PER_PAGE = 6;
@@ -83,13 +84,32 @@ export default function AllBlogs() {
         ) : (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {currentBlogs.map((blog) => (
+              {currentBlogs.map((blog) => {
+                const imagePath = getBlogImage(blog.id);
+                return (
                 <article
                   key={blog.id}
                   className="border-l-4 border-l-primary-500 border-t border-r border-b border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
                 >
+                  <div className="flex gap-4 mb-3">
+                    {imagePath && (
+                      <div className="flex-shrink-0">
+                        <div className="relative w-24 h-24 rounded-lg overflow-hidden">
+                          <Image
+                            src={imagePath}
+                            alt={blog.title}
+                            fill
+                            className="object-cover"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                            }}
+                          />
+                        </div>
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
                   <div className="mb-3 flex items-center justify-between">
-                    <time className="text-sm text-gray-500">
+                    <time className="text-sm text-gray-700 font-medium">
                       {new Date(blog.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'short',
@@ -148,8 +168,11 @@ export default function AllBlogs() {
                       />
                     </svg>
                   </Link>
+                    </div>
+                  </div>
                 </article>
-              ))}
+              );
+              })}
             </div>
 
             {/* Pagination */}
