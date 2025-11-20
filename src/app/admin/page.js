@@ -1,5 +1,12 @@
 'use client';
 
+export default function AdminDashboard() {
+  return null;
+}
+
+/*
+'use client';
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -79,7 +86,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Delete Confirmation Modal */}
+        {/* Delete Confirmation Modal * /
         {deleteConfirm && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-cream-100 rounded-lg p-6 max-w-md w-full mx-4">
@@ -105,7 +112,7 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* Blogs Table */}
+        {/* Blogs Table * /
         <div className="bg-white border border-gray rounded-lg overflow-hidden">
           {blogs.length === 0 ? (
             <div className="text-center py-12">
@@ -216,4 +223,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
-
+*/

@@ -1,5 +1,15 @@
 'use client';
 
+/**
+ * Admin login temporarily disabled – page intentionally blank.
+ */
+export default function AdminLogin() {
+  return null;
+}
+
+/*
+'use client';
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { isAdminAuthenticated, setAdminAuthenticated, checkAdminPassword } from '@/lib/utils';
@@ -91,4 +101,5 @@ export default function AdminLogin() {
     </div>
   );
 }
+*/
 

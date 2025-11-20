@@ -1,15 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
+
+/*
+import { useEffect, useState } from 'react';
 import { isAdminAuthenticated } from '@/lib/utils';
+*/
 
 export default function Header() {
-  const [isAdmin, setIsAdmin] = useState(false);
+  // const [isAdmin, setIsAdmin] = useState(false);
 
-  useEffect(() => {
-    setIsAdmin(isAdminAuthenticated());
-  }, []);
+  // useEffect(() => {
+  //   setIsAdmin(isAdminAuthenticated());
+  // }, []);
 
   return (
     <header className="border-b border-gray-200 bg-cream-200 shadow-sm">
@@ -31,21 +34,7 @@ export default function Header() {
             >
               All Blogs
             </Link>
-            {isAdmin ? (
-              <Link 
-                href="/admin" 
-                className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
-              >
-                Admin Dashboard
-              </Link>
-            ) : (
-              <Link 
-                href="/admin/login" 
-                className="text-gray-700 hover:text-secondary-600 transition-colors"
-              >
-                Admin Login
-              </Link>
-            )}
+            {/* Admin links temporarily disabled */}
           </nav>
         </div>
       </div>
